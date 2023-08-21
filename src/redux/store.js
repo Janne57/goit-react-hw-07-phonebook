@@ -1,16 +1,35 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { contactsApi } from './contactSlice.js';
+import {filterReducer} from './filterSlice.js';
 
 export const store = configureStore({
   reducer: {
-    // Add the generated reducer as a specific top-level slice
+    // filter: filterReducer,
     [contactsApi.reducerPath]: contactsApi.reducer,
+    [filterReducer.reducerPath]: filterReducer.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware(),
     contactsApi.middleware,
   ],
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 

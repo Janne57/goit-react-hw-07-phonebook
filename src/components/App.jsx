@@ -1,20 +1,21 @@
-// import Contacts from './/Contacts/Contacts.js';
+import Contacts from './/Contacts/Contacts.js';
 import ContactForm from './ContactForm/ContactForm.js';
-// import Filter from './Filter/Filter.js';
+import Filter from './Filter/Filter.js';
+import css from './/App.module.css';
 
 
 const App = () => {
 
   return (
-    <>
+    <div className={css.basic}>
       <h1>Phonebook</h1>
       <ContactForm />
 
       <h2>Contacts</h2>
-      {/* <Filter /> */}
+      <Filter />
 
-      {/* <Contacts /> */}
-    </>
+      <Contacts />
+    </div>
   );
 };
 

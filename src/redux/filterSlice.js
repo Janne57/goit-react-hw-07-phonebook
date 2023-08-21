@@ -1,17 +1,21 @@
-// import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-// export const filterSlice = createSlice({
-//   name: 'filter',
-//   initialState: '',
-//   reducers: {
+export const filterSlice = createSlice({
+  name: 'filter',
+  initialState: {
+    contacts: [],
+    filter: '',
+  },
+  reducers: {
    
-//     filterContact: (_, action) => {
-//       return action.payload;
-//     },
-//   },
-// });
+    filterContact: (state, action) => {
+      state.filter = action.payload;
+    },
+  },
+});
 
-// // Action creators are generated for each case reducer function
-// export const { filterContact } = filterSlice.actions;
 
-// export default filterSlice.reducer;
+// Action creators are generated for each case reducer function
+export const { filterContact } = filterSlice.actions;
+
+export const filterReducer = filterSlice.reducer;
