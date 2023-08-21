@@ -16,7 +16,7 @@ const ContactForm = () => {
   const [number, setNumber] = useState('');
   // const contacts = useSelector(getContact);
 
-  const { data, error, isLoading } = useGetContactsQuery();
+  const { data } = useGetContactsQuery();
   // const { data, error, isLoading } = useGetContactsByFilterQuery('qqq');;
 // const { dataF, errorF, isLoadingF } = useGetContactsByFilterQuery('qqq');
 // console.log('data', data);
@@ -29,7 +29,7 @@ const ContactForm = () => {
 
 const [ addContact, result] = useAddContactMutation();
 // console.log('addContact', addContact);
-// console.log('result', result);
+console.log('result', result);
 // const state = useSelector(state=>state)
 // console.log('state', state);
 
