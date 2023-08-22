@@ -1,11 +1,11 @@
 import Contacts from './/Contacts/Contacts.js';
-import ContactForm from './ContactForm/ContactForm.js';
-import Filter from './Filter/Filter.js';
+// import ContactForm from './ContactForm/ContactForm.js';
+// import Filter from './Filter/Filter.js';
 import css from './/App.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { getContact } from 'redux/selectors.js';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations.js';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getContact } from 'redux/selectors.js';
+// import { useEffect } from 'react';
+// import { fetchContacts } from 'redux/operations.js';
 
 
 const App = () => {
