@@ -82,9 +82,9 @@ const Contacts = () => {
       <div> 
      {/* <p>{JSON.stringify(contacts) }</p> */}
        {/* <p>{data}</p> */}
-       <p>{items}</p>
+       
    
-      {/* <ul className={css.contact__list}>
+      <ul className={css.contact__list}>
         
         {items.map(({ id, name, number }) => (
           <li key={id} className={css.contact__item}>
@@ -99,7 +99,7 @@ const Contacts = () => {
             </button>
           </li>
         ))}
-      </ul> */}
+      </ul>
       </div>
       )
     }
