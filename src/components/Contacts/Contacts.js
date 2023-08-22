@@ -12,7 +12,7 @@ import { ColorRing } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContact, getError, getIsLoading } from 'redux/selectors.js';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations.js';
+import { deleteContacts, fetchContacts } from 'redux/operations.js';
 // import css from '..//components/Loader.module.css';
 
 const Contacts = () => {
@@ -42,9 +42,9 @@ const Contacts = () => {
     }, [dispatch]);
 
     // console.log('JSON.stringify(items, null, 2)', JSON.stringify(items, null, 2))
-    console.log('items', items);
-    const data = JSON.stringify(items);
-    console.log('data', data);
+    // console.log('items', items);
+    // const data = JSON.stringify(items);
+    // console.log('data', data);
     // console.log('contacts.items', contacts.items);
   // const getVisibleContact = () => {
   //   const normalizedFilter = filter.toLowerCase();
@@ -57,10 +57,10 @@ const Contacts = () => {
 
   // const visibleContact = getVisibleContact();
 
-  // const handleDelete = id => {
-  //   dispatch(deleteContact(id));
-  //   console.log('deleteContact', deleteContact(id));
-  // };
+  const handleDelete = (id) => {
+    dispatch(deleteContacts(id));
+    // console.log('deleteContact', deleteContact(id));
+  };
 
   return (
   <div className={css.spiner}>
@@ -79,19 +79,15 @@ const Contacts = () => {
         />
       </p>
     ) : (
-      <div> 
-     {/* <p>{JSON.stringify(contacts) }</p> */}
-       {/* <p>{data}</p> */}
-       
-   
-      <ul className={css.contact__list}>
-        
+      <div>
+      <ul className={css.contact__list}>  
         {items.map(({ id, name, number }) => (
           <li key={id} className={css.contact__item}>
             <p className={css.contact__item__name}>{name}</p>
             <p className={css.contact__item__numb}>{number}</p>
             <button
-              // onClick={() => { handleDelete(id); }}
+              // onClick={handleDelete(id)}
+              onClick={() => handleDelete(id)}
               // onClick={() => deleteContact(id)}
               // disabled={result.isFetching}
             >
