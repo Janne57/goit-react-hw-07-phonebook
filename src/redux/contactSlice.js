@@ -8,7 +8,7 @@ const contactSlice = createSlice({
       isLoading: false,
       error: null,
     },
-    filter: '',
+    
 
   extraReducers: {
 
@@ -30,8 +30,8 @@ const contactSlice = createSlice({
     [addContacts.fulfilled] (state, action) {
       state.isLoading = false;
       state.error = null;
-      // state.items.push(action.payload);
-      state.items = [action.payload, ...state.items];
+      state.items.push(action.payload);
+      // state.items = [ ...state.items, action.payload];
     },
     [addContacts.rejected](state, action) {
       state.isLoading = false;
@@ -43,7 +43,7 @@ const contactSlice = createSlice({
     [deleteContacts.fulfilled](state, action) {
       state.isLoading=false;
       state.error= null;
-      state.items = state.items.filter(({id}) => id !== action.payload);
+      state.items = state.items.filter(({id}) => id !== action.payload.id);
     },
     [deleteContacts.rejected](state, action) {
       state.isLoading = false;
@@ -57,6 +57,29 @@ const contactSlice = createSlice({
 //   contactSlice.actions;
 
 export const contactReducer = contactSlice.reducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //task 8
 // // import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query'

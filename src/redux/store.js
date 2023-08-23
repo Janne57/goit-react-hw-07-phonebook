@@ -1,12 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { contactReducer } from './contactSlice.js';
-// import { contactsApi } from './contactSlice.js';
-// import { filterReducer } from './filterSlice.js';
+import { filterReducer } from './filterSlice.js';
 
 export const store = configureStore({
   reducer: {
-    // contacts: (state = []) => state,
     contacts: contactReducer,
+    filter: filterReducer,
   },
 });
 
